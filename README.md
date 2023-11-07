@@ -1,4 +1,4 @@
-# A Full stack Firebase and Angular Project -Company Inventory
+# Firebase and Angular Project -Company Inventory
 This project makes use of the technologies in Angular and Fire base to perform CRUD operations on company inventory details
 
 ## Table of contents
