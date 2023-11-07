@@ -16,7 +16,7 @@ This project makes use of the technologies in Angular and Fire base to perform C
 
 ### Links
 
-- Live Site URL: [Front end live URL](https://restaurant-mern-frontend.onrender.com/)
+- Live Site URL: [Click here](https://company-inventory.vercel.app/)
 
 ## My process
 
