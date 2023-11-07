@@ -24,7 +24,7 @@ This project makes use of the technologies in Angular and Fire base to perform C
 - Bootstrap
 - [Angular](https://angular.io/) - JS Framework
 - [Firebase](https://firebase.google.com/) - Backend
-- [Render](https://render.com/docs/free) - Cloud live site
+- [Vercel](https://vercel.com/dashboard) - Cloud live site
 
 ### What I learned
 Use of Firebase as Backend as a service technology
