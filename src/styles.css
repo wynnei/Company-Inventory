@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+/* form validation */
+form.ng-invalid.submitted input.ng-invalid{
+    border-color: red;
+}
+
+/* table */
+table tr td:not(:last-child):hover{
+    cursor:pointer;
+}
+table tr td:last-child>i:hover{
+    cursor: pointer;
+}
+
+table thead th{
+    color: gray !important;
+}
+.content{
+    margin-top: 80px;
+}
+
+.change-color{
+    background-color: rgb(205, 220, 255);
+    color: rgb(10, 10, 75);
+}

@@ -1,0 +1,98 @@
+<!-- information to be displayed on web browser from inventory component -->
+<div class="content  ">
+  <div></div>
+  <hr style="color: blue" />
+  <div class="display-4">
+    <h1 class=" text-center  fw-bold" style="font-weight: 600">
+      Company Inventory
+    </h1>
+    <hr style="color: blue" />
+  </div>
+  <div class="p-4">
+    <div class="">
+      <!-- add form -->
+      <div class="col-md-10">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()" class="row fw-bold" action="" [class.submitted]="submitted"  >
+          <div class="col-12 mb-3">
+            <label for="itemName" class="form-label">Name of Item:</label>
+            <input
+              id="itemName"
+              type="text"
+              class="form-control form-control-lg"
+              formControlName="itemName"
+            />
+          </div>
+
+          <div class="col-12 mb-3">
+            <label for="supplier" class="form-label">Supplier:</label>
+            <input
+              id="supplier"
+              type="text"
+              class="form-control form-control-lg"
+              formControlName="supplier"
+            />
+          </div>
+
+          <div class="col-12 mb-3">
+            <label for="cost" class="form-label">Unit Cost:</label>
+            <input
+              id="cost"
+              type="number"
+              class="form-control form-control-lg"
+              formControlName="cost"
+            />
+          </div>
+
+          <div class="col-12 mb-3">
+            <label for="description" class="form-label"
+              >Item Description:</label
+            >
+            <input
+              id="description"
+              type="text"
+              class="form-control form-control-lg"
+              formControlName="description"
+            />
+          </div>
+
+          <div class=" float-end col-12 mb-3">
+            <button type="submit" class=" m-3 btn btn-large btn-primary">
+              Add Inventory
+            </button> 
+            <button class="change-color btn btn-large btn-primary " type="button" (click)="updateInventory(selectedItemId)">Update Inventory</button>
+          </div>
+          
+        </form>
+      </div>
+    </div>
+    <!-- inventory details -->
+    <div class="col-md-10">
+      <h4 class="text-center">Registered Company assets</h4>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Name of Item</th>
+            <th>Supplier</th>
+            <th>Unit cost</th>
+            <th>Item Description</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of inventories">
+            <td (click)="populateForm(item.id)">{{ item.itemName }}</td>
+            <td (click)="populateForm(item.id)">{{ item.supplier }}</td>
+            <td (click)="populateForm(item.id)">{{ item.cost }}</td>
+            <td (click)="populateForm(item.id)">{{ item.description }}</td>
+            <td>
+              <i
+                (click)="deleteInventory(item.id)"
+                class="far fa-trash-alt fa-lg text-danger"
+              ></i>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
