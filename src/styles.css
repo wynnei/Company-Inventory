@@ -4,6 +4,9 @@ form.ng-invalid.submitted input.ng-invalid{
     border-color: red;
 }
 
+form.ng-invalid.isUpdate input.ng-invalid{
+    border-color: rgb(255, 0, 8);
+}
 /* table */
 table tr td:not(:last-child):hover{
     cursor:pointer;

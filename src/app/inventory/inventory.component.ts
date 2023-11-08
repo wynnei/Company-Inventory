@@ -14,6 +14,7 @@ export class InventoryComponent implements OnInit {
   inventories:any;
   selectedItemId!: string;
   submitted:boolean = false
+  isUpdate:boolean = false;
  
   //inject inventory service class
   constructor(private firestore: AngularFirestore,public serviceInventory:InventoryService,private toastr:ToastrService){
@@ -26,9 +27,12 @@ export class InventoryComponent implements OnInit {
   }
   //create function
   onSubmit(){
+    this.isUpdate = false
     this.submitted = true;
     if(this.form.valid){
+
       const formData = this.form.value;
+      
       this.serviceInventory.addInventory(formData)
       this.toastr.success('Created successfully','Inventory ')
       this.form.reset()
@@ -40,19 +44,22 @@ export class InventoryComponent implements OnInit {
   //function to select an item for updating
   updateInventory(id: string) {
     this.submitted = true;
+    this.isUpdate =true
     if (this.form.valid) {
       const formData = this.form.value;
       this.serviceInventory.updateInventory(id, formData)
+      this.toastr.success('Updated successfully', 'Inventory');
       this.form.reset();
       this.submitted = false;
+      this.isUpdate = false
+      
     }
   }
 
-  onItemSelection(item: any) {
-    this.selectedItemId = item.id; // Set the selected item's ID
-  }
+ 
   //populate form with the data to be updated
   populateForm(id: string) {
+    this.selectedItemId = id;
     const selectedItem = this.inventories.find((item:any) => item.id === id);
     if (selectedItem) {
       this.form.patchValue(selectedItem);
